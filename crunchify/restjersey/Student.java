@@ -17,7 +17,6 @@ public class Student {
 	private int age;
 	private byte[] encodedByte;
 
-	
 	public String getFirstName() {
 		return firstname;
 	}
@@ -25,6 +24,7 @@ public class Student {
 	public void setFirstName(String firstname) {
 		this.firstname = firstname;
 	}
+
 	public String getLastName() {
 		return lastname;
 	}
@@ -32,7 +32,7 @@ public class Student {
 	public void setLastName(String lastname) {
 		this.lastname = lastname;
 	}
- 
+
 	public int getAge() {
 		return age;
 	}
@@ -42,8 +42,7 @@ public class Student {
 	}
 
 	public byte[] convertImage(String f) throws IOException {
-	
-		
+
 		byte[] imageInByte;
 		BufferedImage originalImage = ImageIO.read(new File(f));
 
@@ -53,27 +52,12 @@ public class Student {
 		baos.flush();
 		imageInByte = baos.toByteArray();
 		baos.close();
-		
-		//convert byte array convert to base64
+
+		// convert byte array convert to base64
 
 		byte[] encodedByte = Base64.getEncoder().encode(imageInByte);
-		return encodedByte ;
-		
-}
-		
-		
-	
-	
-		
-
-	
+		return encodedByte;
 
 	}
-		
 
-	
-
-	
-	
-	
-
+}
